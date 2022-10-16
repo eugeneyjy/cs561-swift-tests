@@ -24,7 +24,7 @@ class WeatherServiceImpl: WeatherService {
     }
 }
 
-private struct Weather: Decodable {
+internal struct Weather: Decodable {
     let main: Main
 
     struct Main: Decodable {

@@ -15,7 +15,10 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build
-      run: swift build -v
+      run: |
+        cd MyLibrary/
+        swift build -v
+        cd ..
     - uses: actions/setup-node@v3
     - name: Spin up mock
       run: |
@@ -24,4 +27,7 @@ jobs:
         node index.js &
         cd ..
     - name: Run tests
-      run: swift test -v
+      run: |
+        cd MyLibrary/
+        swift test -v
+        cd ..
